@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .form-container {
+            width: 400px;
+            margin: auto;
+        }
+        .input-group {
+            position: relative;
+            margin-bottom: 15px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            padding-left: 40px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+        .input-group i {
+            position: absolute;
+            left: 10px;
+            top: 12px;
+            color: gray;
+        }
+        .error input {
+            border-color: red;
+            background-color: #ffe6e6;
+        }
+        .error-message {
+            color: red;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+        .error i {
+            color: red;
+        }
+        .submit-btn {
+            background-color: orange;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Contact Form</h2>
+        <form id="myForm">
+            <div class="input-group">
+                <i class="fa fa-user"></i>
+                <input type="text" id="firstName" placeholder="First Name">
+                <div class="error-message"></div>
+            </div>
+
+            <div class="input-group">
+                <i class="fa fa-user"></i>
+                <input type="text" id="lastName" placeholder="Last Name">
+                <div class="error-message"></div>
+            </div>
+
+            <div class="input-group">
+                <i class="fa fa-envelope"></i>
+                <input type="email" id="email" placeholder="E-Mail">
+                <div class="error-message"></div>
+            </div>
+
+            <div class="input-group">
+                <i class="fa fa-phone"></i>
+                <input type="text" id="phone" placeholder="Phone #">
+                <div class="error-message"></div>
+            </div>
+
+            <div class="input-group">
+                <i class="fa fa-home"></i>
+                <input type="text" id="address" placeholder="Address">
+                <div class="error-message"></div>
+            </div>
+
+            <div class="input-group">
+                <i class="fa fa-city"></i>
+                <input type="text" id="city" placeholder="City">
+                <div class="error-message"></div>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#myForm").submit(function(e) {
+                e.preventDefault();
+                $(".error-message").text("");  
+                $(".input-group").removeClass("error");
+
+                let isValid = true;
+
+                if ($("#firstName").val().trim() === "") {
+                    showError("#firstName", "Please supply your first name");
+                    isValid = false;
+                }
+                if ($("#lastName").val().trim() === "") {
+                    showError("#lastName", "Please supply your last name");
+                    isValid = false;
+                }
+                if ($("#email").val().trim() === "") {
+                    showError("#email", "Please supply your email address");
+                    isValid = false;
+                }
+                if ($("#phone").val().trim() === "") {
+                    showError("#phone", "Please supply your phone number");
+                    isValid = false;
+                }
+                if ($("#address").val().trim() === "") {
+                    showError("#address", "Please supply your street address");
+                    isValid = false;
+                }
+                if ($("#city").val().trim() === "") {
+                    showError("#city", "Please supply your city");
+                    isValid = false;
+                }
+
+                if (isValid) {
+                    alert("Form submitted successfully!");
+                }
+            });
+
+            function showError(inputId, message) {
+                $(inputId).parent().addClass("error");
+                $(inputId).siblings(".error-message").text(message);
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        /* Task Header Style */
+        .task-header {
+            background-color: #2d471c; /* Dark Green */
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px;
+            display: inline-block;
+            border-radius: 5px;
+            clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%);
+        }
+        /* Box Styling */
+        .box {
+            border: 1px solid black;
+            width: 250px;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Box with Nested List -->
+    <div class="box">
+        <p>Lists can be nested (list inside list):</p>
+        <ul>
+            <li>Coffee</li>
+            <li>Tea
+                <ul>
+                    <li>Black tea</li>
+                    <li>Green tea</li>
+                </ul>
+            </li>
+            <li>Milk</li>
+        </ul>
+    </div>
+</body>
+</html>

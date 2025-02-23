@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        /* Task Header Style */
+        .task-header {
+            background-color: #2d471c; /* Dark Green */
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px;
+            display: inline-block;
+            border-radius: 5px;
+            clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%);
+        }
+        /* Table Styling */
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #add8e6; /* Light Blue */
+            font-weight: bold;
+        }
+        td {
+            background-color: #b0e0e6; /* Lighter Blue */
+        }
+    </style>
+</head>
+<body>
+    <!-- Table -->
+    <table>
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Age</th>
+        </tr>
+        <tr>
+            <td>Jill</td>
+            <td>Smith</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td>Eve</td>
+            <td>Jackson</td>
+            <td>94</td>
+        </tr>
+        <tr>
+            <td>John</td>
+            <td>Doe</td>
+            <td>80</td>
+        </tr>
+    </table>
+
+</body>
+</html>
